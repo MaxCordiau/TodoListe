@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Liste</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="p-8">
+            <h1 class="text-2xl font-bold mb-4">Ma Todo Liste</h1>
+            <!-- Formulaire pour ajouter une tâche -->
+            <form id="todo-form" class="mb-4">
+                <input type="text" id="name_tache" placeholder="Nouvelle tâche" class="w-full p-2 border rounded">
+                <!-- ajoute a la db en post -->
+                    <button type="submit" class="mt-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Ajouter</button>
+            </form>
+            <!-- Tâches en cours -->
+            <h2 class="text-xl font-semibold mb-2">Tâches en cours</h2>
+            <ul id="todo-list" class="mb-8">
+                <li>
+                </li>
+            </ul>
+            <!-- Tâches terminées -->
+            <h2 class="text-xl font-semibold mb-2">Tâches terminées</h2>
+            <ul id="completed-list"></ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
