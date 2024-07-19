@@ -87,52 +87,52 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Erreur:', error));
     }
 
-    // function enableEditing(taskNameElement, taskId, currentName) {
-    //     const input = document.createElement('input');
-    //     input.type = 'text';
-    //     input.value = currentName;
-    //     input.classList.add('flex-1', 'ml-2', 'border', 'p-1');
+    function enableEditing(taskNameElement, taskId, currentName) {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.value = currentName;
+        input.classList.add('flex-1', 'ml-2', 'border', 'p-1');
 
-    //     input.addEventListener('keydown', (event) => {
-    //         if (event.key === 'Enter') {
-    //             updateTaskName(taskId, input.value);
-    //         }
-    //     });
+        input.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                updateTaskName(taskId, input.value);
+            }
+        });
 
-    //     input.addEventListener('blur', () => {
-    //         updateTaskName(taskId, input.value);
-    //     });
+        input.addEventListener('blur', () => {
+            updateTaskName(taskId, input.value);
+        });
 
-    //     taskNameElement.replaceWith(input);
-    //     input.focus();
-    // }
+        taskNameElement.replaceWith(input);
+        input.focus();
+    }
 
 
-// function updateTaskName(id, newName) {
-    //     fetch('todolist.php', {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Content-Type': 'application/x-www-form-urlencoded',
-    //         },
-    //         body: `id=${id}&name_tache=${encodeURIComponent(newName)}`,
-    //     })
-    //     .then(() => fetchTodoList())
-    //     .catch(error => console.error('Erreur:', error));
-    // }
+function updateTaskName(id, newName) {
+        fetch('todolist.php', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `id=${id}&name_tache=${encodeURIComponent(newName)}`,
+        })
+        .then(() => fetchTodoList())
+        .catch(error => console.error('Erreur:', error));
+    }
 
-    // function deleteTask(id) {
-    //     if (confirm("Êtes-vous sûr de vouloir supprimer cette tâche ?")) {
-    //         fetch('todolist.php', {
-    //             method: 'DELETE',
-    //             headers: {
-    //                 'Content-Type': 'application/x-www-form-urlencoded',
-    //             },
-    //             body: `id=${id}`,
-    //         })
-    //         .then(() => fetchTodoList())
-    //         .catch(error => console.error('Erreur:', error));
-    //     }
-    // }
+    function deleteTask(id) {
+        if (confirm("Êtes-vous sûr de vouloir supprimer cette tâche ?")) {
+            fetch('todolist.php', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `id=${id}`,
+            })
+            .then(() => fetchTodoList())
+            .catch(error => console.error('Erreur:', error));
+        }
+    }
 
     todoForm.addEventListener('submit', addTodo);
 

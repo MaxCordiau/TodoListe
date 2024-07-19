@@ -12,7 +12,7 @@
     }
 
 
-    require_once 'crud/connect.php';
+    require_once 'connect.php';
 
     // Ajouter une nouvelle tâche
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
