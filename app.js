@@ -106,6 +106,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
 
 
+// function updateTaskName(id, newName) {
+    //     fetch('todolist.php', {
+    //         method: 'PUT',
+    //         headers: {
+    //             'Content-Type': 'application/x-www-form-urlencoded',
+    //         },
+    //         body: `id=${id}&name_tache=${encodeURIComponent(newName)}`,
+    //     })
+    //     .then(() => fetchTodoList())
+    //     .catch(error => console.error('Erreur:', error));
+    // }
+
+    // function deleteTask(id) {
+    //     if (confirm("Êtes-vous sûr de vouloir supprimer cette tâche ?")) {
+    //         fetch('todolist.php', {
+    //             method: 'DELETE',
+    //             headers: {
+    //                 'Content-Type': 'application/x-www-form-urlencoded',
+    //             },
+    //             body: `id=${id}`,
+    //         })
+    //         .then(() => fetchTodoList())
+    //         .catch(error => console.error('Erreur:', error));
+    //     }
+    // }
+    
     todoForm.addEventListener('submit', addTodo);
 
     fetchTodoList();
