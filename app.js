@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const todoForm = document.getElementById('todo-form');
     const nameTacheInput = document.getElementById('name_tache');
 
+    // fonction qui récupère la liste des tâches et les affiche
     function fetchTodoList() {
         fetch('todolist.php')
             .then(response => response.json())
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Erreur:', error));
     }
 
+    // fonction qui permet d'ajouter une nouvelle tâche
     function addTodo(event) {
         event.preventDefault();
         const name_tache = nameTacheInput.value.trim();
@@ -131,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //         .catch(error => console.error('Erreur:', error));
     //     }
     // }
-    
+
     todoForm.addEventListener('submit', addTodo);
 
     fetchTodoList();
